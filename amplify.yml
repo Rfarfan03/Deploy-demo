@@ -1,0 +1,22 @@
+# [AWS Paso 6] Configuración de build para Amplify (repo monorepo: backend/ + frontend/).
+# Amplify solo construye el frontend; el backend va en ECS. Al conectar el repo,
+# marca "My app is a monorepo" y usa `frontend` como root directory.
+version: 1
+applications:
+  - appRoot: frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        # El proyecto en angular.json se llama "frontend"
+        baseDirectory: dist/frontend/browser
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*

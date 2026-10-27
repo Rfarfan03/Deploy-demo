@@ -1,0 +1,5 @@
+node_modules
+# Nunca meter credenciales en la imagen: DATABASE_URL va como variable de entorno en ECS
+.env
+# Se regenera dentro del contenedor con `prisma generate`
+src/generated
