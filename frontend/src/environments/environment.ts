@@ -2,5 +2,5 @@
 // Reemplazar por la URL HTTPS que entrega ECS Express Mode, SIN "/" al final.
 export const environment = {
   production: true,
-  apiUrl: 'https://LA-URL-QUE-ENTREGO-AWS',
+  apiUrl: 'https://ba-58656a40385945849f93dad9301ebccc.ecs.us-east-2.on.aws ',
 };
